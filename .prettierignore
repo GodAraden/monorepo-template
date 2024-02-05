@@ -1,7 +1,5 @@
 pnpm-lock.yaml
-
-node_modules/
-**/node_modules/
-
-**/*.svg
-**/*.md
+.eslintrc
+./**/node_modules/
+./**/*.svg
+./**/*.md

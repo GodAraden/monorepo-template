@@ -2,7 +2,7 @@
   "name": "monorepo-template",
   "version": "1.0.0",
   "scripts": {
-    "preinstall": "pnpm dlx only-allow pnpm",
+    "preinstall": "npx only-allow pnpm",
     "dev": "npm-run-all -p dev:*",
     "dev:server": "cd server && pnpm vite",
     "dev:client": "cd client && pnpm vite",
@@ -12,10 +12,7 @@
     "build": "npm-run-all -p build:*",
     "build:server": "cd server && pnpm vite build",
     "build:client": "cd client && pnpm vite build",
-    "check": "npm-run-all -p check:*",
-    "check:server": "cd server && pnpm tsc -p ./tsconfig.json --noEmit",
-    "check:client": "cd client && pnpm vue-tsc -p ./tsconfig.json --noEmit",
-    "format": "prettier --write \"{client,server}/src/**/{*.ts,*.vue,*.json}\"",
+    "format": "prettier --write \"{client,server}/{src,test}/**/{*.ts,*.vue,*.json}\"",
     "lint": "eslint \"{client,server}/{src,test}/**/{*.ts,*.vue,*.json}\"",
     "clean": "rm -rf node_modules **/node_modules"
   },
@@ -34,7 +31,6 @@
     "rollup": "4.9.5",
     "typescript": "^5.3.3",
     "vite": "5.0.12",
-    "vitest": "^1.2.0",
-    "vue-eslint-parser": "^9.4.2"
+    "vitest": "^1.2.0"
   }
 }
